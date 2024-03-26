@@ -1,0 +1,15 @@
+#Environment file to store credentials
+.env
+
+# Response JSON Output file
+response.josn
+
+#Intermediate files
+.gch
+
+#Compiled files
+.out
+./fruit
+
+# VSCode Custom Settings
+.vscode
