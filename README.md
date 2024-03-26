@@ -12,9 +12,11 @@ sudo apt-get install libcurl4-nss-dev
 
 ## Usage:
 ```
+git clone -b lab5 https://github.com/ompiepy/ncccsce306.git
+cd ncccsce306
 make API_KEY="YOUR_API_KEY"
 ```
-> Replace YOUR_API_KEY with your API Key. You can get one from [here](https://www.ers.usda.gov/developer/data-apis/#apiForm).
+> Remember to replace YOUR_API_KEY with your API Key. You can get one from [here](https://www.ers.usda.gov/developer/data-apis/#apiForm).
 
 ## Output
 ![output](output.png)

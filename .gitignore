@@ -2,7 +2,7 @@
 .env
 
 # Response JSON Output file
-response.json
+.json
 
 #Intermediate files
 .gch
