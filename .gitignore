@@ -11,7 +11,7 @@ response.josn
 
 #Compiled files
 .out
-./fruit
+fruit
 
 # VSCode Custom Settings
 .vscode
