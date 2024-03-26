@@ -15,3 +15,6 @@ sudo apt-get install libcurl4-nss-dev
 make API_KEY="YOUR_API_KEY"
 ```
 > Replace YOUR_API_KEY with your API Key. You can get one from [here](https://www.ers.usda.gov/developer/data-apis/#apiForm).
+
+## Output
+![output](output.png)
