@@ -1,5 +1,5 @@
 # Lab 6: Analyzing Nutritional Values of "Fruit" Objects
-This file analyzes some nutritional values obtained from (Lab5)[https://github.com/ompiepy/ncccsce306/tree/lab5]..
+This file analyzes some nutritional values obtained from [Lab5]([)https://github.com/ompiepy/ncccsce306/tree/lab5).
 
 ## Prerequsites
 - libcurl
