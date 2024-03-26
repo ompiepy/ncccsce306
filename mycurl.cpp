@@ -3,7 +3,7 @@
 // Adapted from: libcurl. See https://curl.se/libcurl/ for more details
 // File Name: mycurl.CPP
 // NCC CSCE 306 1 - OO Software Development
-// Lab #5 - Fruit Class File in C++
+// Lab 6: Analyzing Nutritional Values of "Fruit" Objects
 // Description: This file implements curl to get make the HTTP Request
 // --------------------------------------------------------------------
 

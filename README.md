@@ -1,5 +1,5 @@
-# Lab 5: Fruit Class File in C++
-This file makes the API call and gets the data from [USDA FoodData Central](https://fdc.nal.usda.gov/fdc-app.html#/).
+# Lab 6: Analyzing Nutritional Values of "Fruit" Objects
+This file analyzes some nutritional values obtained from (Lab5)[https://github.com/ompiepy/ncccsce306/tree/lab5]..
 
 ## Prerequsites
 - libcurl
@@ -12,11 +12,15 @@ sudo apt-get install libcurl4-nss-dev
 
 ## Usage:
 ```
-git clone -b lab5 https://github.com/ompiepy/ncccsce306.git
-cd ncccsce306
+mkdir lab6
+cd lab6
+git clone -b lab6 https://github.com/ompiepy/ncccsce306.git .
 make API_KEY="YOUR_API_KEY"
 ```
 > Remember to replace YOUR_API_KEY with your API Key. You can get one from [here](https://www.ers.usda.gov/developer/data-apis/#apiForm).
 
 ## Output
 ![output](output.png)
+![output1](output1.png)
+![output2](output2.png)
+![output3](output3.png)

@@ -9,6 +9,8 @@
 # include <iostream>
 # include "json.hpp" // Implementation of nlohmann/json.hpp: See https://github.com/nlohmann/json for more details
 # include <string>
+# include <algorithm> // Standard Library to implement various sorting and data manupulation function
+# include <vector> // Standard Library for vector operations and vector data management
 
 using json = nlohmann::json; // Defining scope for nlohmann namesapce
 
@@ -103,5 +105,17 @@ class Fruit{
 
 double findNutrientAmount(const json& data, const std::string& nutrientName);
 std::string findNutrientUnit(const json& data, const std::string& nutrientName);
+Fruit findHighestEnergy(const std::vector<Fruit>& fruits);
+Fruit findHighestProtein(const std::vector<Fruit>& fruits);
+Fruit findHighestLipid(const std::vector<Fruit>& fruits);
+Fruit findHighestCarbs(const std::vector<Fruit>& fruits);
+
+void DisplayAccordingToEnergy(const std::vector<Fruit>& fruits);
+void DisplayAccordingToProtein(const std::vector<Fruit>& fruits);
+void DisplayAccordingToLipid(const std::vector<Fruit>& fruits);
+void DisplayAccordingToCarbs(const std::vector<Fruit>& fruits);
+
+double calculateScore(Fruit fruit);
+Fruit findMostNutritiousFruit(const std::vector<Fruit>& fruits);
 
 #endif
