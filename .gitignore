@@ -6,6 +6,8 @@ response.josn
 
 #Intermediate files
 .gch
+.h.gch
+.hpp.gch
 
 #Compiled files
 .out
