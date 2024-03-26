@@ -1,17 +1,17 @@
 #Environment file to store credentials
-.env
+*.env
 
 # Response JSON Output file
-.json
+*.json
 
 #Intermediate files
-.gch
-.h.gch
-.hpp.gch
+*.gch
+*.h.gch
+*.hpp.gch
 
 #Compiled files
-.out
+*.out
 fruit
 
 # VSCode Custom Settings
-.vscode
+*.vscode
