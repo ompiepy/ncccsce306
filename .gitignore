@@ -12,6 +12,7 @@
 #Compiled files
 *.out
 fruit
+a
 
 # VSCode Custom Settings
 *.vscode
