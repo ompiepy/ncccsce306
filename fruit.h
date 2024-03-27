@@ -2,7 +2,7 @@
 // Author: Om Sharma
 // File Name: fruit.h
 // NCC CSCE 306 1 - OO Software Development
-// Lab #5 - Fruit Class File in C++
+// Lab 6: Analyzing Nutritional Values of "Fruit" Objects
 // Description: This file declares the data members and function required for fruit.cpp
 // --------------------------------------------------------------------------------------
 
