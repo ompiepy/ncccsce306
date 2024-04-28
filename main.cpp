@@ -2,7 +2,7 @@
 // Author: Om Sharma
 // File Name: main.cpp
 // NCC CSCE 306 1 - OO Software Development
-// Lab 8: Passing Values, References, and Pointers to Functions
+// Lab 8 - Passing Data and using Pointers
 // Description: This lab This lab focuses on creating overloaded functions that
 // accept different variable types (simple, reference, and pointer variables) and
 // calling these functions from the `main()` function.
@@ -12,6 +12,7 @@
 #include <array>	// Strandard Array Library
 #include <string>	// Standard String Library
 #include "helper.h" // Include the helper.h file
+# include <memory> // Standard Memory Library
 //#include "final.cpp"
 
 int main(int argc, char **argv)
@@ -29,22 +30,6 @@ int main(int argc, char **argv)
 	take_simple_variable(ten_ten);
 	take_simple_variable(int_array_five);
 	take_simple_variable<5>(std_int_array);
-
-	// // Print the value and memory reference of each variable
-	// std::cout << "my_integer: " << my_integer << " memory reference: " << &my_integer << std::endl;
-	// std::cout << "my_double: " << my_double << " memory reference: " << &my_double << std::endl;
-	// std::cout << "ten_ten: " << ten_ten << " memory reference: " << &ten_ten << std::endl;
-
-	// Print the value and memory reference of each element in the arrays
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "int_array_five[" << i << "]: " << int_array_five[i] << " memory reference: " << &int_array_five[i] << std::endl;
-	// }
-
-	// //Print the value and memory reference of each element in the standard Integer Array
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "std_int_array[" << i << "]: " << std_int_array[i] << " memory reference: " << &std_int_array[i] << std::endl;
-	// }
-
 	std::cout << std::endl;
 
 	// Creating the reference variables for each declared variable
@@ -53,21 +38,6 @@ int main(int argc, char **argv)
 	std::string &my_str_ref = ten_ten;				   // Reference Variable for String
 	int(&my_array_ref)[5] = int_array_five;			   // Reference Variable for Integer Array
 	std::array<int, 5> &std_array_ref = std_int_array; // Reference Variable for Standard Integer Array
-
-	// Print the initial variable's value and its memory location using the reference variables. Additionally, print the de-referenced value of the reference variables. Provide clear titles and labels. Use loops to print values in both arrays.
-	//std::cout << "my_int_ref: " << my_integer << " memory reference: " << &my_int_ref << " de-referenced value: " << my_int_ref << std::endl;
-	//std::cout << "my_dbl_ref: " << my_double << " memory reference: " << &my_dbl_ref << " de-referenced value: " << my_dbl_ref << std::endl;
-	//std::cout << "my_str_ref: " << ten_ten << " memory reference: " << &my_str_ref << " de-referenced value: " << my_str_ref << std::endl;
-
-	// //Print the value and memory reference of each element in the arrays
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "my_array_ref[" << i << "]: " << int_array_five[i] << " memory reference: " << &my_array_ref[i] << " de-referenced value: " << my_array_ref[i] << std::endl;
-	// }
-
-	// //Print the value and memory reference of each element in the standard Integer Array
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "std_array_ref[" << i << "]: " << std_int_array[i] << " memory reference: " << &std_array_ref[i] << " de-referenced value: " << std_array_ref[i] << std::endl;
-	// }
 
 	// Call each overloaded function with the reference variables as arguments
 	take_reference_variable(my_int_ref);
@@ -82,30 +52,42 @@ int main(int argc, char **argv)
 	double *my_dbl_ptr = &my_double;		   // Pointer Variable for Double
 	std::string *my_str_ptr = &ten_ten;		   // Pointer Variable for String
 	int *my_array_ptr = int_array_five;		   // Pointer to the first element of the Integer Array
-	// int *std_array_ptr = std_int_array; // Pointer to the first element of the standard Integer Array
-
-	// //Print the initial variable's value and the de-referenced memory locations using the pointer variables. Additionally, print the value of the pointer variables. Use descriptive titles, labels, and loops for array values.
-	// std::cout << "my_int_ptr: " << my_integer << " memory reference: " << &my_int_ptr << " de-referenced value: " << *my_int_ptr << std::endl;
-	// std::cout << "my_dbl_ptr: " << my_double << " memory reference: " << &my_dbl_ptr << " de-referenced value: " << *my_dbl_ptr << std::endl;
-	// std::cout << "my_str_ptr: " << ten_ten << " memory reference: " << &my_str_ptr << " de-referenced value: " << *my_str_ptr << std::endl;
-
-	// //Print the value and memory reference of each element in the arrays
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "my_array_ptr[" << i << "]: " << int_array_five[i] << " memory reference: " << &my_array_ptr[i] << " de-referenced value: " << my_array_ptr[i] << std::endl;
-	// }
-
-	// //Print the value and memory reference of each element in the standard Integer Array
-	// for (int i = 0; i < 5; i++) {
-	// 	std::cout << "std_array_ptr[" << i << "]: " << std_int_array[i] << " memory reference: " << &std_array_ptr[i] << " de-referenced value: " << std_array_ptr[i] << std::endl;
-	// }
-
+	
 	// Call each overloaded function with the pointer variables as arguments
 	take_pointer_variable(*my_int_ptr);
 	take_pointer_variable(*my_dbl_ptr);
 	take_pointer_variable(*my_str_ptr);
 	take_pointer_variable(my_array_ptr);
 	take_pointer_variable<5>(std_int_array);
+	std::cout << std::endl;
 
-	//call_eight_lab();
+	//Create a smart pointer variable that points to the memory location of each variable
+	std::unique_ptr<int> my_int_sptr = std::make_unique<int>(my_integer); // Smart Pointer for Integer
+	
+ 	// Smart Pointer Variable for Double
+	std::unique_ptr<double> my_dbl_sptr = std::make_unique<double>(my_double);
+
+	// Smart Pointer Variable for String
+	std::unique_ptr<std::string> my_str_sptr = std::make_unique<std::string>(ten_ten);
+
+	// Smart Pointer Variable for Integer Array
+	std::unique_ptr<int[]> my_array_sptr = std::make_unique<int[]>(5);
+
+	// Smart Pointer Variable for Standard Integer Array
+	std::unique_ptr<std::array<int, 5>> std_array_sptr = std::make_unique<std::array<int, 5>>();
+
+	std::copy(std::begin(int_array_five), std::end(int_array_five), std_array_sptr->begin());
+	// Smart pointer to a std::array (using std::shared_ptr)
+	std::shared_ptr<std::array<int, 5>> smart_std_array_ptr = std::make_shared<std::array<int, 5>>(std_int_array);
+
+	// Smart pointers offer automatic memory management and ownership semantics, 
+	//reducing the risk of memory-related errors in C++ programs.
+
+	// Call each overloaded function with the smart pointer variables as arguments
+	take_smart_pointer_variable(*my_int_sptr);
+	take_smart_pointer_variable(*my_dbl_sptr);
+	take_smart_pointer_variable(*my_str_sptr);
+	take_smart_pointer_variable(std_array_sptr->data());
+	take_smart_pointer_variable<5>(*smart_std_array_ptr);
 	return 0;
 }

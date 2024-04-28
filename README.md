@@ -1,4 +1,4 @@
-# Lab #7 - Variables, Reference Variables, and Pointer Variables (Limited Scope)
+# Lab #8 - Passing Data and using Pointers
 This lab demonstrates the use of variables, reference variables, and pointer variables in C++.
 
 ## Prerequsites
@@ -7,12 +7,13 @@ This lab demonstrates the use of variables, reference variables, and pointer var
 
 ## Usage:
 ```
-mkdir lab7
-cd lab7
-git clone -b lab7 https://github.com/ompiepy/ncccsce306.git .
+mkdir lab8
+cd lab8
+git clone -b lab8 https://github.com/ompiepy/ncccsce306.git .
 make
 ```
 ## Output
 ![output1](output1.png)
 ![output2](output2.png)
 ![output3](output3.png)
+![output4](output4.png)
