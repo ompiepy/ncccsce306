@@ -12,5 +12,5 @@ default: run
 # Compiles with the flag -lcurl
 # Run the application
 run:
-	@g++ -o a main.cpp helper.h helper.cpp
+	@g++ -o a main.cpp Person.cpp Person.h
 	@./a
