@@ -9,8 +9,7 @@
 # Default is to run command defined by "run"
 default: run
 
-# Compiles with the flag -lcurl
 # Run the application
 run:
-	@g++ -o a main.cpp Person.cpp Person.h
+	@g++ -o a main.cpp Person.cpp Person.h Student.cpp Student.h
 	@./a

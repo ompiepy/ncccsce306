@@ -2,7 +2,7 @@
 // Author: Om Sharma
 // File Name: helper.h
 // NCC CSCE 306 1 - OO Software Development
-// Lab 9 - Two-File Style Class
+// Lab 10 - Object Inheritance Single Parent
 // Description: This file contains the Peroosn class declaration
 // --------------------------------------------------------------------------------------
 
