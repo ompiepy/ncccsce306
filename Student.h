@@ -5,32 +5,39 @@
 // Lab 10 - Object Inheritance Single Parent
 // Description: This file contains the Student class declaration
 // --------------------------------------------------------------------------------------
-
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "Person.h" // Include the Person class header file
+#include "Person.h"
+#include <string>
+#include <vector>
+#include <unordered_map>
 
-class Student : public Person { // Student inherits from Person
+class Student : public Person {
 private:
-    std::string studentID;
-    std::string major;
+    float gpa;
+    std::string degree;
 
 public:
     // Constructors
     Student();
-    Student(std::string name, int age, std::string studentID, std::string major);
+    Student(std::string name, int studentID, float gpa, std::string degree, std::string city, std::string callName);
 
-    // Destructor
-    ~Student();
+    // Getter and setter methods
+    float getGPA() const;
+    void setGPA(float gpa);
+    std::string getDegree() const;
+    void setDegree(const std::string& degree);
 
-    // Getter and setter methods for studentID and major
-    std::string getStudentID() const;
-    void setStudentID(const std::string& studentID);
-    std::string getMajor() const;
-    void setMajor(const std::string& major);
+    // Additional computations
+    static float computeAverageGPA(const std::vector<Student>& students);
+    static std::unordered_map<std::string, float> computeGPAPerDegree(const std::vector<Student>& students);
+    static float highestGPA(const std::vector<Student>& students);
+    static std::string mostPursuedDegreeType(const std::vector<Student>& students);
+    static void sortStudents(std::vector<Student>& students);
+    static std::string cityWithHighestAverageGPA(const std::vector<Student>& students);
 
-    // Override the display method from the base class
+    // Display method
     void display() const;
 };
 

@@ -5,17 +5,13 @@
 // Lab 10 - Object Inheritance Single Parent
 // Description: This file contains the definitions of Person Class
 // --------------------------------------------------------------------------------------
-
 #include "Person.h"
-#include <iostream>
 
 // Constructors
-Person::Person() : name(""), age(0) {}
+Person::Person() : name(""), studentID(0), city(""), callName("") {}
 
-Person::Person(std::string name, int age) : name(name), age(age) {}
-
-// Destructor
-Person::~Person() {}
+Person::Person(std::string name, int studentID, std::string city, std::string callName) :
+    name(name), studentID(studentID), city(city), callName(callName) {}
 
 // Getter and setter methods
 std::string Person::getName() const {
@@ -26,15 +22,26 @@ void Person::setName(const std::string& name) {
     this->name = name;
 }
 
-int Person::getAge() const {
-    return age;
+int Person::getStudentID() const {
+    return studentID;
 }
 
-void Person::setAge(int age) {
-    this->age = age;
+void Person::setStudentID(int studentID) {
+    this->studentID = studentID;
 }
 
-// Other methods
-void Person::display() const {
-    std::cout << "Name: " << name << ", Age: " << age << std::endl;
+std::string Person::getCity() const {
+    return city;
+}
+
+void Person::setCity(const std::string& city) {
+    this->city = city;
+}
+
+std::string Person::getCallName() const {
+    return callName;
+}
+
+void Person::setCallName(const std::string& callName) {
+    this->callName = callName;
 }
