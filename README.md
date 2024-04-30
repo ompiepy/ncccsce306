@@ -20,3 +20,6 @@ make API_KEY="YOUR_API_KEY"
 
 ## Output
 ![output](output.png)
+
+## Project Idea
+https://shorturl.at/cmsK6
